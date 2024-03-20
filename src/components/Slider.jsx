@@ -10,7 +10,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+} from "swiper/modules";
 
 const Slider = () => {
   return (
@@ -19,12 +25,16 @@ const Slider = () => {
         cssMode={true}
         navigation={true}
         pagination={{
-            clickable: true,
-          }}
+          clickable: true,
+        }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         mousewheel={true}
         keyboard={true}
         loop={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+        modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
         className="mySwiper"
       >
         <SwiperSlide>
