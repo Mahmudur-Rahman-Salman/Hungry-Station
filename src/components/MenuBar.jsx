@@ -8,7 +8,7 @@ import {
 const MenuBar = () => {
   return (
     <>
-      <Navbar fluid border container mx-auto>
+      <Navbar fluid border bg-black>
         <NavbarBrand>
           {/* <img
             src="/favicon.svg"
