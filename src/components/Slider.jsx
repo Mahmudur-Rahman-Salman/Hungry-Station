@@ -30,7 +30,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             src={slider1}
-            alt=""
+            alt="slider images"
             // style={{ width: "100%", height: "100vh" }}
             className="object-cover"
           />
@@ -38,7 +38,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             src={slider2}
-            alt=""
+            alt="slider images"
             // style={{ width: "100%", height: "100vh" }}
             className="object-cover"
           />
@@ -46,7 +46,7 @@ const Slider = () => {
         <SwiperSlide>
           <img
             src={slider3}
-            alt=""
+            alt="slider images"
             // style={{ width: "100%", height: "100vh" }}
             className="object-cover"
           />
