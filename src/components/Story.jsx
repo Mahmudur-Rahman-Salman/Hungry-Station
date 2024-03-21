@@ -4,8 +4,11 @@ import SectionTitle from "./SectionTitle";
 const Story = () => {
   return (
     <>
-      <section >
-        <SectionTitle heading="About Us" subheading="From 11.00am to 10.00pm"></SectionTitle>
+      <section>
+        <SectionTitle
+          heading="About Us"
+          subheading="From 11.00am to 10.00pm"
+        ></SectionTitle>
         <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 overflow-hidden grid grid-cols-1 lg:grid-cols-2 md:px-8 justify-items-center">
           <div className="mt-14 md:mt-0 md:max-w-xl">
             <img src={aboutPic} className="w-full " alt="about us image" />
@@ -19,10 +22,16 @@ const Story = () => {
             </h2>
             <p>
               Are you ready to embark on a culinary journey like no other? At
-              Hungry Station, we&apos;re dedicated to satisfying your cravings with a
-              delectable array of mouthwatering dishes, all conveniently located
-              in one place. Whether you&apos;re in the mood for savory delights,
-              sweet treats, or something in between, we&apos;ve got you covered.
+              Hungry Station, we&apos;re dedicated to satisfying your cravings
+              with a delectable array of mouthwatering dishes, all conveniently
+              located in one place. Whether you&apos;re in the mood for savory
+              delights, sweet treats, or something in between, we&apos;ve got
+              you covered.
+              <br />
+              Ready to satisfy your hunger cravings? Visit us at Hungry Station
+              and treat yourself to a culinary adventure like no other. Whether
+              you're dining solo, with friends, or with family, we look forward
+              to welcoming you and serving up a feast to remember.
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
               <a
