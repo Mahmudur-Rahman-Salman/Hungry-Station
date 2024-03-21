@@ -13,7 +13,7 @@ const Story = () => {
           <div className="mt-14 md:mt-0 md:max-w-xl">
             <img src={aboutPic} className="w-full " alt="about us image" />
           </div>
-          <div className="flex-none justify-center space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+          <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
             <h1 className="text-sm pt-5 text-indigo-600 font-medium">
               Our Little Story
             </h1>
@@ -30,7 +30,7 @@ const Story = () => {
               <br />
               Ready to satisfy your hunger cravings? Visit us at Hungry Station
               and treat yourself to a culinary adventure like no other. Whether
-              you're dining solo, with friends, or with family, we look forward
+              you&apos;re dining solo, with friends, or with family, we look forward
               to welcoming you and serving up a feast to remember.
             </p>
             <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
