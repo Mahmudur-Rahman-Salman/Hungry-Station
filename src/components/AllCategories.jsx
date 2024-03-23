@@ -45,7 +45,7 @@ const AllCategories = () => {
                     {category.strCategory}
                   </h3>
                   <p className="text-gray-400 text-sm mt-1">
-                    {category.strCategoryDescription}
+                    {category.strCategoryDescription.slice(0,400)}
                   </p>
                 </div>
               </a>
