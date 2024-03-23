@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import SectionTitle from "./SectionTitle";
 
 const AllCategories = () => {
   const [allCategories, setAllCategories] = useState([]);
@@ -21,10 +22,14 @@ const AllCategories = () => {
     <>
       <section className="mt-12 mx-auto px-4 max-w-screen-xl md:px-8">
         <div className="text-center">
-          <h1 className="text-3xl text-gray-800 font-semibold">List of Food Categories</h1>
+          {/* <h1 className="text-3xl text-gray-800 font-semibold">List of Food Categories</h1>
           <p className="mt-3 text-gray-500">
           Explore a Diverse Range of Culinary Delights.
-          </p>
+          </p> */}
+          <SectionTitle
+            heading="List of Food Categories"
+            subheading="Explore a Diverse Range of Culinary Delights."
+          ></SectionTitle>
         </div>
         <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {allCategories.map((category) => (
@@ -45,7 +50,7 @@ const AllCategories = () => {
                     {category.strCategory}
                   </h3>
                   <p className="text-gray-400 text-sm mt-1">
-                    {category.strCategoryDescription.slice(0,400)}
+                    {category.strCategoryDescription.slice(0, 400)}
                   </p>
                 </div>
               </a>
