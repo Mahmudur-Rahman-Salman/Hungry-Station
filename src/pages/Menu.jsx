@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const Menu = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [category, setCategory] = useState([]);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const mealSearchInput = (e) => {
@@ -22,8 +22,13 @@ const Menu = () => {
           `https://www.themealdb.com/api/json/v1/1/filter.php?c=${searchQuery}`
         );
         const data = await response.json();
-        setCategory(data.meals);
-        setError(null);
+        if (data.meals === null) {
+          setError("No results found"); // Set error message if no results are found
+          setCategory([]); // Clear meals
+        } else {
+          setCategory(data.meals);
+          setError(null); // Reset error if fetching is successful
+        }
       } catch (error) {
         setError("Error fetching data");
       } finally {
@@ -69,7 +74,7 @@ const Menu = () => {
                 <input
                   type="text"
                   name="search"
-                  placeholder="Search meals by category"
+                  placeholder="seafood, beef, goat, lamb, breakfast, chicken...."
                   className="w-full py-3 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
                 />
               </div>
@@ -104,7 +109,11 @@ const Menu = () => {
               </div>
             </>
           )}
-          {error && <p>{error}</p>}
+          {error && (
+            <div className="flex justify-center mt-5 ">
+              <p className="text-red-600 text-center uppercase text-lg font-bold">{error}</p>
+            </div>
+          )}
           <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
             {category.map((items, key) => (
               <li className="w-full mx-auto group sm:max-w-sm" key={key}>
