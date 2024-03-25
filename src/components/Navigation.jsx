@@ -6,8 +6,7 @@ const Navigation = () => {
   // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Home", path: "/" },
-    { title: "Menu", path: "/menu" },
-    { title: "Category", path: "/category" },
+    { title: "Menu", path: "/category" },
   ];
 
   useEffect(() => {
