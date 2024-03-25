@@ -1,16 +1,12 @@
 import { useEffect, useState } from "react";
-import logo from "../assets/Image/Hungry-logo.png"; 
-
-
+import logo from "../assets/Image/Hungry-logo.png";
 
 const Footer = () => {
-
-  const [currentYear , setCurrentYear] = useState(new Date().getFullYear()); 
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
-    setCurrentYear(new Date().getFullYear()); 
-  }, [])
-  
+    setCurrentYear(new Date().getFullYear());
+  }, []);
 
   const footerNavs = [
     {
@@ -44,22 +40,16 @@ const Footer = () => {
     <>
       <footer className="text-gray-500 bg-white px-4 py-5 mt-10 max-w-screen-xl mx-auto md:px-8 border-y-2">
         <div className="max-w-lg sm:mx-auto sm:text-center">
-          <img
-            src={logo}
-            className="w-32 sm:mx-auto"
-          />
-          <p className="leading-relaxed mt-2 text-[15px]">
-            Lorem Ipsum has been the industrys standard dummy text ever since
-            the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
+          <img src={logo} className="w-32 sm:mx-auto" />
+          <p className="leading-relaxed mt-2 text-[15px] font-medium text-amber-600 hover:text-amber-700">
+            &quot;Feed your cravings, satisfy your soul. Welcome to Hungry
+            Station - where every bite tells a story!&quot;
           </p>
         </div>
         <ul className="items-center justify-center mt-8 space-y-5 sm:flex sm:space-x-4 sm:space-y-0">
           {footerNavs.map((item, idx) => (
             <li key={idx} className=" hover:text-gray-800">
-              <a href={item.href}>
-                {item.name}
-              </a>
+              <a href={item.href}>{item.name}</a>
             </li>
           ))}
         </ul>
