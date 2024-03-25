@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -41,8 +42,8 @@ const Meals = () => {
     } else {
       setMeals([]);
     }
-    fetchMeals(); 
-  }, [nameSearch]);// Empty dependency array ensures that this effect runs only once when the component mounts
+    fetchMeals();
+  }, [nameSearch]); // Empty dependency array ensures that this effect runs only once when the component mounts
   return (
     <>
       <section className="py-32">
@@ -53,7 +54,7 @@ const Meals = () => {
             </h1>
             <p className="text-gray-600">Find your favorite meals here.</p>
             <p className="text-gray-600">
-             Full Names: Spicy Arrabiata Penne, Sushi..... 
+              Full Names: Spicy Arrabiata Penne, Sushi.....
             </p>
 
             <form
@@ -123,18 +124,29 @@ const Meals = () => {
           <div>
             <div className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {meals.map((items, key) => (
-                <div className="w-full mx-auto group sm:max-w-sm" key={key}>
+                <div
+                  className="w-full mx-auto group sm:max-w-sm border p-5 rounded-lg"
+                  key={key}
+                >
                   <a href="#">
                     <img
                       src={items.strMealThumb}
                       loading="lazy"
                       alt={items.strMeal}
-                      className="w-full rounded-lg"
+                      className="w-full "
                     />
                     <div className="mt-3 space-y-2">
-                      <h3 className="text-lg text-center text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
+                      <h3 className="text-lg text-center text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
                         {items.strMeal}
                       </h3>
+                      <div className="flex justify-between ">
+                        <p className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
+                          {items.strArea}
+                        </p>
+                        <Link className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold" to={items.strYoutube} target="_blank">
+                          Watch here
+                        </Link>
+                      </div>
                     </div>
                   </a>
                 </div>
