@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+import logo from "../assets/Image/Hungry-logo.png"; 
+
+
+
 const Footer = () => {
+
+  const [currentYear , setCurrentYear] = useState(new Date().getFullYear()); 
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear()); 
+  }, [])
+  
+
   const footerNavs = [
     {
       href: "javascript:void()",
@@ -32,7 +45,7 @@ const Footer = () => {
       <footer className="text-gray-500 bg-white px-4 py-5 mt-10 max-w-screen-xl mx-auto md:px-8 border-y-2">
         <div className="max-w-lg sm:mx-auto sm:text-center">
           <img
-            src="https://www.floatui.com/logo.svg"
+            src={logo}
             className="w-32 sm:mx-auto"
           />
           <p className="leading-relaxed mt-2 text-[15px]">
@@ -52,7 +65,7 @@ const Footer = () => {
         </ul>
         <div className="mt-8 items-center justify-between sm:flex">
           <div className="mt-4 sm:mt-0">
-            &copy; 2022 Float UI All rights reserved.
+            <p>&copy;{currentYear} Hungry Station. All rights reserved</p>
           </div>
           <div className="mt-6 sm:mt-0">
             <ul className="flex items-center space-x-4">

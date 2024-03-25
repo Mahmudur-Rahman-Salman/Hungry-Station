@@ -39,7 +39,7 @@ const Category = () => {
       fetchCategory();
     } else {
       setCategory([]);
-    }
+    } 
   }, [searchQuery]);
 
   return (
