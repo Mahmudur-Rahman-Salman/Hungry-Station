@@ -41,7 +41,8 @@ const Meals = () => {
     } else {
       setMeals([]);
     }
-  }, [nameSearch]);
+    fetchMeals(); 
+  }, [nameSearch]);// Empty dependency array ensures that this effect runs only once when the component mounts
   return (
     <>
       <section className="py-32">
@@ -52,7 +53,7 @@ const Meals = () => {
             </h1>
             <p className="text-gray-600">Find your favorite meals here.</p>
             <p className="text-gray-600">
-             Full Names: Spicy Arrabiata Penne, 
+             Full Names: Spicy Arrabiata Penne, Sushi..... 
             </p>
 
             <form
@@ -77,7 +78,7 @@ const Meals = () => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="seafood, beef, goat, lamb, breakfast, chicken...."
+                  placeholder="Spicy Arrabiata Penne, Sushi..... "
                   className="w-full py-3 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
                 />
               </div>
