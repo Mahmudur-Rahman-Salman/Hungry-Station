@@ -7,6 +7,7 @@ const Navigation = () => {
   // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Home", path: "/" },
+    { title: "Meals", path: "/meals" },
     { title: "Category", path: "/category" },
   ];
 

@@ -1,47 +1,47 @@
 import { useEffect, useState } from "react";
 
-const Category = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [category, setCategory] = useState([]);
-  const [error, setError] = useState(null);
+const Meals = () => {
+  const [meals, setMeals] = useState([]);
+  const [error, setErrors] = useState(null);
+  const [nameSearch, setNameSearch] = useState("");
   const [loading, setLoading] = useState(false);
-
-  const categorySearchInput = (e) => {
+  const mealSearchInput = (e) => {
     e.preventDefault();
     const form = e.target;
-    const search = form.search.value;
-    console.log(search);
-    setSearchQuery(search);
+    const name = form.name.value;
+    console.log(name);
+    setNameSearch(name);
   };
 
   useEffect(() => {
-    const fetchCategory = async () => {
+    const fetchMeals = async () => {
       try {
-        setLoading(true); // Set loading to true when fetching starts
+        setLoading(true);
         const response = await fetch(
-          `https://www.themealdb.com/api/json/v1/1/filter.php?c=${searchQuery}`
+          `https://www.themealdb.com/api/json/v1/1/search.php?s=${nameSearch}`
         );
         const data = await response.json();
+
         if (data.meals === null) {
-          setError("No results found"); // Set error message if no results are found
-          setCategory([]); // Clear meals
+          setErrors("No meals has been found"); //Set error message if no results are found
+          setMeals([]); // Clear meals
         } else {
-          setCategory(data.meals);
-          setError(null); // Reset error if fetching is successful
+          setMeals(data.meals);
+          setErrors(null); // Reset error if fetching is successful
         }
       } catch (error) {
-        setError("Error fetching data");
+        setErrors("Error fetching data");
       } finally {
         setLoading(false);
       }
     };
-    if (searchQuery) {
-      fetchCategory();
-    } else {
-      setCategory([]);
-    }
-  }, [searchQuery]);
 
+    if (nameSearch) {
+      fetchMeals();
+    } else {
+      setMeals([]);
+    }
+  }, [nameSearch]);
   return (
     <>
       <section className="py-32">
@@ -51,10 +51,13 @@ const Category = () => {
               Search Meal By Category Names
             </h1>
             <p className="text-gray-600">Find your favorite meals here.</p>
-            <p className="text-gray-600">Category Names: seafood, goat, chikcen, vegetarian, beef, dessert, lamb,Miscellaneous, pasta, pork, side, starter, vegan, breakfast</p>
+            <p className="text-gray-600">
+              Category Names: seafood, goat, chikcen, vegetarian, beef, dessert,
+              lamb,Miscellaneous, pasta, pork, side, starter, vegan, breakfast
+            </p>
 
             <form
-              onSubmit={categorySearchInput}
+              onSubmit={mealSearchInput}
               className="max-w-md px-4 mx-auto mt-12"
             >
               <div className="relative">
@@ -74,7 +77,7 @@ const Category = () => {
                 </svg>
                 <input
                   type="text"
-                  name="search"
+                  name="name"
                   placeholder="seafood, beef, goat, lamb, breakfast, chicken...."
                   className="w-full py-3 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
                 />
@@ -112,32 +115,36 @@ const Category = () => {
           )}
           {error && (
             <div className="flex justify-center mt-5 ">
-              <p className="text-red-600 text-center uppercase text-lg font-bold">{error}</p>
+              <p className="text-red-600 text-center uppercase text-lg font-bold">
+                {error}
+              </p>
             </div>
           )}
-          <ul className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
-            {category.map((items, key) => (
-              <li className="w-full mx-auto group sm:max-w-sm" key={key}>
-                <a href="#">
-                  <img
-                    src={items.strMealThumb}
-                    loading="lazy"
-                    alt={items.strMeal}
-                    className="w-full rounded-lg"
-                  />
-                  <div className="mt-3 space-y-2">
-                    <h3 className="text-lg text-center text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
-                      {items.strMeal}
-                    </h3>
-                  </div>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div>
+            <div className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+              {meals.map((items, key) => (
+                <div className="w-full mx-auto group sm:max-w-sm" key={key}>
+                  <a href="#">
+                    <img
+                      src={items.strMealThumb}
+                      loading="lazy"
+                      alt={items.strMeal}
+                      className="w-full rounded-lg"
+                    />
+                    <div className="mt-3 space-y-2">
+                      <h3 className="text-lg text-center text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
+                        {items.strMeal}
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </>
   );
 };
 
-export default Category;
+export default Meals;
