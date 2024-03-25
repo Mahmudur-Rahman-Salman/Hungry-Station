@@ -48,12 +48,11 @@ const Meals = () => {
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
           <div className="space-y-5 sm:text-center sm:max-w-md sm:mx-auto">
             <h1 className="text-gray-800 text-3xl font-extrabold sm:text-4xl">
-              Search Meal By Category Names
+              Search Meal By Names
             </h1>
             <p className="text-gray-600">Find your favorite meals here.</p>
             <p className="text-gray-600">
-              Category Names: seafood, goat, chikcen, vegetarian, beef, dessert,
-              lamb,Miscellaneous, pasta, pork, side, starter, vegan, breakfast
+             Full Names: Spicy Arrabiata Penne, 
             </p>
 
             <form
