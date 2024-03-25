@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from '../assets/Image/Hungry-logo.png'
 
 const Navigation = () => {
   const [state, setState] = useState(false);
@@ -6,7 +7,7 @@ const Navigation = () => {
   // Replace javascript:void(0) paths with your paths
   const navigation = [
     { title: "Home", path: "/" },
-    { title: "Menu", path: "/category" },
+    { title: "Category", path: "/category" },
   ];
 
   useEffect(() => {
@@ -28,9 +29,9 @@ const Navigation = () => {
           <div className="flex items-center justify-between py-5 md:block">
             <a href="javascript:void(0)">
               <img
-                src="https://www.floatui.com/logo.svg"
-                width={120}
-                height={50}
+                src={logo}
+                width={150}
+                height={80}
                 alt="Float UI logo"
               />
             </a>

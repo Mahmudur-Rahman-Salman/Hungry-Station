@@ -126,7 +126,7 @@ const Category = () => {
                     className="w-full rounded-lg"
                   />
                   <div className="mt-3 space-y-2">
-                    <h3 className="text-lg text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
+                    <h3 className="text-lg text-center text-gray-800 duration-150 group-hover:text-indigo-600 font-semibold">
                       {items.strMeal}
                     </h3>
                   </div>
