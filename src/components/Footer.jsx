@@ -55,7 +55,7 @@ const Footer = () => {
         </ul>
         <div className="mt-8 items-center justify-between sm:flex">
           <div className="mt-4 sm:mt-0">
-            <p>&copy;{currentYear} Hungry Station. All rights reserved</p>
+            <p>&copy;{currentYear}, All rights reserved by Hungry Station!</p>
           </div>
           <div className="mt-6 sm:mt-0">
             <ul className="flex items-center space-x-4">
