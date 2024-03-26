@@ -1,5 +1,5 @@
 
-import AllCategories from "../components/AllCategories";
+// import AllCategories from "../components/AllCategories";
 import Slider from "../components/Slider";
 import Story from "../components/Story";
 
@@ -9,7 +9,7 @@ const Home = () => {
         <>
             <Slider></Slider>
             <Story></Story>
-            <AllCategories></AllCategories>
+            {/* <AllCategories></AllCategories> */}
         </>
     );
 };

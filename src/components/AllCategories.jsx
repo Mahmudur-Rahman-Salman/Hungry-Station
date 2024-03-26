@@ -5,7 +5,7 @@ const AllCategories = () => {
   const [allCategories, setAllCategories] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchCategoryData = async () => {
       try {
         const response = await fetch(
           "https://www.themealdb.com/api/json/v1/1/categories.php"
@@ -16,7 +16,7 @@ const AllCategories = () => {
         console.log("Error fetching data:", error);
       }
     };
-    fetchData();
+    fetchCategoryData();
   }, []);
   return (
     <>
