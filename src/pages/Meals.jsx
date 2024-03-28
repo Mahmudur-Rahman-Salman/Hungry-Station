@@ -1,3 +1,4 @@
+import { Card } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -49,11 +50,13 @@ const Meals = () => {
       <section className="py-32">
         <div className="max-w-screen-xl mx-auto px-4 md:px-8">
           <div className="space-y-5 sm:text-center sm:max-w-md sm:mx-auto">
-            <h1 className="text-gray-800 text-3xl font-extrabold sm:text-4xl">
+            <h1 className="text-center text-gray-800 text-3xl font-extrabold sm:text-4xl">
               Search Meal By Names
             </h1>
-            <p className="text-gray-600">Find your favorite meals here.</p>
-            <p className="text-gray-600">
+            <p className="text-gray-600 text-center">
+              Find your favorite meals here.
+            </p>
+            <p className="text-gray-600 text-center">
               Full Names: Spicy Arrabiata Penne, Sushi.....
             </p>
 
@@ -124,32 +127,73 @@ const Meals = () => {
           <div>
             <div className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {meals.map((items, key) => (
-                <div
-                  className="w-full mx-auto group sm:max-w-sm border p-5 rounded-lg"
-                  key={key}
-                >
-                  <a href="#">
-                    <img
-                      src={items.strMealThumb}
-                      loading="lazy"
-                      alt={items.strMeal}
-                      className="w-full "
-                    />
-                    <div className="mt-3 space-y-2">
-                      <h3 className="text-lg text-center text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
-                        {items.strMeal}
-                      </h3>
-                      <div className="flex justify-between ">
-                        <p className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
-                          {items.strArea}
-                        </p>
-                        <Link className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold" to={items.strYoutube} target="_blank">
-                          Watch here
-                        </Link>
-                      </div>
-                    </div>
-                  </a>
-                </div>
+                // <div
+                //   className="w-full mx-auto group sm:max-w-sm border p-5 rounded-lg"
+                //   key={key}
+                // >
+                //   <a href="#">
+                //     <img
+                //       src={items.strMealThumb}
+                //       loading="lazy"
+                //       alt={items.strMeal}
+                //       className="w-full "
+                //     />
+                //     <div className="mt-3 space-y-2">
+                //       <h3 className="text-lg text-center text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
+                //         Name: {items.strMeal}
+                //       </h3>
+                //       <div className="flex justify-between ">
+                //         <p className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
+                //           Country: {items.strArea}
+                //         </p>
+                //         <Link
+                //           className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold"
+                //           to={items.strYoutube}
+                //           target="_blank"
+                //         >
+                //           Watch here
+                //         </Link>
+                //       </div>
+                //       <div className="flex justify-between ">
+                //         <Link className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold" to={items.idMeal} items={items}>See More</Link>
+                //         <p className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
+                //           Add To Cart
+                //         </p>
+                //       </div>
+                //     </div>
+                //   </a>
+                // </div>
+
+                <Card key={key}>
+                  <img src={items.strMealThumb} alt={items.strMeal} />
+
+                  <h5 className="text-center text-xl font-semibold tracking-tight text-gray-800 duration-150 hover:text-indigo-600">
+                    Name: {items.strMeal}
+                  </h5>
+
+                  <div className="flex items-center justify-between">
+                    <h6 className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">
+                      Country: {items.strArea}
+                    </h6>
+                    <Link
+                      to={items.strYoutube}
+                      className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold"
+                    >Watch Here </Link>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    {/* <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                      $599
+                    </span> */}
+                    <Link to={items.idMeal} items={items} className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold">See More...</Link>
+
+                    <Link
+                      href="#"
+                      className="rounded-lg bg-cyan-700 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-cyan-800 focus:outline-none focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800"
+                    >
+                      Add to cart
+                    </Link>
+                  </div>
+                </Card>
               ))}
             </div>
           </div>
