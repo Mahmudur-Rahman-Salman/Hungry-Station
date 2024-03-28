@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const SingleMeal = () => {
   const { id } = useParams();
@@ -53,30 +53,36 @@ const SingleMeal = () => {
   }
   return (
     <>
-      <section>
-        <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 text-gray-600 md:px-8 xl:flex">
-          <div className="space-y-5 max-w-2xl mx-auto text-center xl:text-left">
-           
-            <h1 className="text-4xl text-gray-800 font-extrabold mx-auto md:text-5xl">
-              Explore in-demand careers and develop cutting edge skills
-            </h1>
-            <p className="max-w-xl mx-auto xl:mx-0">
-              Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-              doloremque laudantium, totam rem aperiam, eaque ipsa quae.
-            </p>
-           
-          </div>
-          <div className="flex-1 max-w-xl mx-auto mt-14 xl:mt-0">
-            <div className="relative">
-              <img
-                src={meal.strMealThumb}
-                className="rounded-lg"
-                alt=""
-              />
-            </div>
-          </div>
+      <section className="mt-10">
+        <h1 className="text-center text-2xl text-gray-800 font-semibold mx-auto md:text-2xl">
+          Explore and discover the delicious meal
+        </h1>
+
+        <div className="text-center">
+          <h3 className="text-xl font-semibold tracking-tight text-gray-800 m-5">
+            Name: {meal.strMeal}
+          </h3>
+          <h4 className="text-xl font-semibold tracking-tight text-gray-800 m-5">
+            Country: {meal.strArea}
+          </h4>
+          <h5 className="text-xl font-semibold tracking-tight text-gray-800 m-5">
+            Category: {meal.strCategory}
+          </h5>
+          <Link
+            className="text-gray-800 duration-150 hover:text-indigo-600 font-semibold m-5"
+            to={meal.strYoutube}
+          >
+            Watch Youtube Video
+          </Link>
         </div>
-        
+
+        <img
+          className="rounded-lg object-cover h-48 w-96 mx-auto m-5"
+          src={meal.strMealThumb}
+          alt=""
+        />
+        <h6 className="text-center m-5 font-semibold">How to make it ? </h6>
+        <p className="text-center w-1/2 mx-auto">{meal.strInstructions}</p>
       </section>
     </>
   );
