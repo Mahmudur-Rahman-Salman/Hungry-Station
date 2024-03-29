@@ -6,6 +6,7 @@ import Meals from './../pages/Meals';
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import SingleMeal from "../pages/SingleMeal";
+import PageNotFound from "../pages/PageNotFound";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
         {
             path:"/signup",
             element: <SignUp></SignUp>,
+        }, 
+        {
+            path:"*",
+            element: <PageNotFound></PageNotFound>,
         }, 
         
     ]
