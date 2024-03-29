@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import SingleMeal from "../pages/SingleMeal";
 import PageNotFound from "../pages/PageNotFound";
+import Contact from "../pages/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
         {
             path:"/signup",
             element: <SignUp></SignUp>,
+        }, 
+        {
+            path:"/contact",
+            element: <Contact></Contact>,
         }, 
         {
             path:"*",

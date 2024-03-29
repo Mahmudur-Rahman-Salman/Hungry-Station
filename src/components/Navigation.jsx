@@ -10,6 +10,7 @@ const Navigation = () => {
     { title: "Home", path: "/" },
     { title: "Meals", path: "/meals" },
     { title: "Category", path: "/category" },
+    { title: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {
