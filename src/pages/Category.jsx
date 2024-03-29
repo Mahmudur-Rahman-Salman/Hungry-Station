@@ -1,5 +1,5 @@
-import AllCategories from "../components/AllCategories";
 
+import AllCategories from './../components/AllCategories';
 
 const Category = () => {
   return (
