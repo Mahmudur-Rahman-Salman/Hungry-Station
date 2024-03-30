@@ -69,7 +69,7 @@ const Contact = () => {
       <main className="py-14">
         <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
           <div className="max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none">
-            <div className="max-w-lg space-y-3">
+            <div className="max-w-lg space-y-3 animate__animated animate__bounceInLeft animate__slower">
               <h3 className="text-indigo-600 font-semibold">Contact</h3>
               <p className="text-gray-800 text-3xl font-semibold sm:text-4xl">
                 Let us know how we can help
@@ -90,7 +90,7 @@ const Contact = () => {
                 </ul>
               </div>
             </div>
-            <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md">
+            <div className="flex-1 mt-12 sm:max-w-lg lg:max-w-md animate__animated animate__bounceInRight animate__slower">
               <form onSubmit={(e) => e.preventDefault()} className="space-y-5">
                 <div>
                   <label className="font-medium">Full name</label>
