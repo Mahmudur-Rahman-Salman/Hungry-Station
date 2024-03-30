@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import SectionTitle from "./SectionTitle";
+import "animate.css/animate.min.css";
 
 const FewMeals = () => {
   const [fewMeals, setFewMeals] = useState([]);
@@ -30,7 +31,7 @@ const FewMeals = () => {
             <div className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
               {fewMeals.map((items, key) => (
                 <div
-                  className="w-full mx-auto group sm:max-w-sm border p-5 rounded-lg shadow-lg duration-300 hover:shadow-sm cursor-pointer"
+                  className="animate__animated animate__zoomIn animate__slower w-full mx-auto group sm:max-w-sm border p-5 rounded-lg shadow-lg duration-300 hover:shadow-sm cursor-pointer"
                   key={key}
                 >
                   <img

@@ -11,7 +11,7 @@ const Story = () => {
         ></SectionTitle>
         <div className="max-w-screen-xl mx-auto text-gray-600 gap-x-12 overflow-hidden grid grid-cols-1 lg:grid-cols-2 md:px-8 justify-items-center">
           <div className="mt-14 md:mt-0 md:max-w-xl">
-            <img src={aboutPic} className="w-full " alt="about us image" />
+            <img src={aboutPic} className="w-full animate__animated animate__slideInLeft animate__slower" alt="about us image" />
           </div>
           <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
             <h1 className="text-sm pt-5 text-indigo-600 font-medium">
