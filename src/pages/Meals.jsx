@@ -128,7 +128,7 @@ const Meals = () => {
 
           <div className="grid gap-x-8 gap-y-10 mt-16 sm:grid-cols-2 lg:grid-cols-3">
             {meals.map((items, key) => (
-              <Card key={key}>
+              <Card key={key} className="animate__animated animate__bounceInLeft animate__slower">
                 <img src={items.strMealThumb} alt={items.strMeal} />
 
                 <h5 className="text-center text-xl font-semibold tracking-tight text-gray-800 duration-150 hover:text-indigo-600">
